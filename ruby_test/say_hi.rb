@@ -11,3 +11,20 @@ def say_hi
   end
 end
 say_hi("Oleg")
+
+
+def say_hi(names)
+  if names.nil?
+    puts "..."
+  elsif names.respond_to?("each")
+    # @names is a list of some kind, iterate!
+    names.each do |name|
+      puts "Hello #{name}!"
+    end
+  else
+    puts "Hello #{names}!"
+  end
+end
+
+a = nil
+say_hi a
